@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-28T00:00:00.000Z",
+  "title": "Design System: Nilda Toraneo VA Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "signal": {
+        "role": "primary",
+        "displayName": "Signal Orange",
+        "canonical": "#e8952e",
+        "tonalRamp": ["#341f0a", "#5c3711", "#8a5218", "#c9771a", "#e8952e", "#f2a54a", "#f7c485", "#fbe3c2"]
+      },
+      "verified": {
+        "role": "secondary",
+        "displayName": "Verified Green",
+        "canonical": "#1f7a4d",
+        "tonalRamp": ["#0a2418", "#123a29", "#175a3a", "#1c6b44", "#1f7a4d", "#3e9c6d", "#7dc0a0", "#c2e2d3"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink Navy",
+        "canonical": "#0f1b2d",
+        "tonalRamp": ["#050a11", "#0f1b2d", "#1c2b42", "#2a3a54", "#4a5a72", "#7a8798", "#b0b8c2", "#e2e5ea"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper Neutral",
+        "canonical": "#f4f1ea",
+        "tonalRamp": ["#3a352a", "#5a5343", "#847a63", "#ab9f80", "#d8d2c4", "#ebe6db", "#f4f1ea", "#faf8f4"]
+      }
+    },
+    "typographyMeta": {
+      "hero-display": { "displayName": "Hero Display", "purpose": "The hero h1 only; the largest, most confident type in the system." },
+      "display": { "displayName": "Section Display", "purpose": "Every Section manifest-row h2 heading." },
+      "label": { "displayName": "Mono Label", "purpose": "Manifest tags, proof-tile labels, credential stamps, SampleTag chip text." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy; warm humanist sans to keep the console register from feeling cold." }
+    },
+    "shadows": [
+      { "name": "stamp-tag", "value": "0 10px 24px -8px rgb(0 0 0 / 0.55)", "purpose": "The hero's rotated, stamped credential tag only — the system's single elevation gesture." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The site's one motion curve, shared by every animated component (lib/motion.ts)." },
+      { "name": "reveal-armed-opacity-verified", "value": "0.98", "purpose": "Accessibility floor for a scroll-reveal's pre-visible state when it may contain --verified text (components/Section.tsx); keeps 4.71:1 verified-green-on-paper contrast above the 4.5:1 AA floor while dimmed." },
+      { "name": "reveal-armed-opacity-default", "value": "0.9", "purpose": "Accessibility floor for a scroll-reveal's pre-visible state with no --verified text (components/sections/ProofStrip.tsx tiles)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px", "note": "Nav's hamburger collapse breakpoint; the brief named ~768px, the shipped build uses 1024px for name+8-link fit. See TODO.md." },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The signal-orange primary action button, e.g. the hero's 'Book a discovery call'.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Book a discovery call<svg class=\"ds-btn-primary-arrow\" viewBox=\"0 0 18 18\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><path d=\"M3 9h11M10 4.5L14.5 9 10 13.5\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 12px; min-height: 56px; padding: 0 28px; background: #e8952e; color: #0f1b2d; font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 700; font-size: 16px; border: none; border-radius: 0; transition: background-color 150ms, scale 150ms; } .ds-btn-primary:hover { background: #f2a54a; } .ds-btn-primary:focus-visible { outline: 2px solid #e8952e; outline-offset: 3px; } .ds-btn-primary:active { scale: 0.97; } .ds-btn-primary-arrow { transition: transform 200ms ease-out; } .ds-btn-primary:hover .ds-btn-primary-arrow { transform: translateX(4px); }"
+    },
+    {
+      "name": "Sample Tag",
+      "kind": "chip",
+      "refersTo": "sample-tag",
+      "description": "The shared placeholder/sample-content flag chip; solid variant.",
+      "html": "<span class=\"ds-sample-tag\">Sample</span>",
+      "css": ".ds-sample-tag { display: inline-block; flex-shrink: 0; padding: 2px 6px; background: #e8952e; color: #0f1b2d; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Manifest Section Header",
+      "kind": "custom",
+      "refersTo": "section-header",
+      "description": "The recurring section header: heading, thin rule, information-bearing mono tag.",
+      "html": "<header class=\"ds-section-header\"><h2 class=\"ds-section-title\">Certifications</h2><span class=\"ds-section-rule\" aria-hidden=\"true\"></span><span class=\"ds-section-tag\">5 certifications &middot; 1 training</span></header>",
+      "css": ".ds-section-header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 20px; margin-bottom: 40px; } .ds-section-title { font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 700; font-size: clamp(1.875rem, 1.4rem + 2vw, 3rem); line-height: 1.05; letter-spacing: -0.03em; color: #17233a; } .ds-section-rule { flex: 1; min-width: 48px; height: 1px; background: #d8d2c4; align-self: center; } .ds-section-tag { font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #4a5568; }"
+    },
+    {
+      "name": "Manifest Card",
+      "kind": "custom",
+      "refersTo": "manifest-card",
+      "description": "The hero's framed photo card with corner ticks, mono metadata strips, barcode, and a rotated stamped credential tag.",
+      "html": "<figure class=\"ds-manifest-card\"><div class=\"ds-manifest-frame\"><span class=\"ds-corner-tick ds-corner-tick--tl\" aria-hidden=\"true\"></span><span class=\"ds-corner-tick ds-corner-tick--tr\" aria-hidden=\"true\"></span><span class=\"ds-corner-tick ds-corner-tick--bl\" aria-hidden=\"true\"></span><span class=\"ds-corner-tick ds-corner-tick--br\" aria-hidden=\"true\"></span><p class=\"ds-manifest-name\">Nilda Toraneo</p><div class=\"ds-manifest-photo\"></div><figcaption class=\"ds-manifest-caption\"><span>Philippines</span></figcaption></div><p class=\"ds-manifest-stamp\"><span class=\"ds-manifest-dot\" aria-hidden=\"true\"></span>Amazon Account Manager &middot; Admin VA</p></figure>",
+      "css": ".ds-manifest-card { position: relative; max-width: 22rem; } .ds-manifest-frame { position: relative; border: 1px solid rgba(244,241,234,0.25); padding: 10px; } .ds-corner-tick { position: absolute; width: 14px; height: 14px; border-color: #f4f1ea; } .ds-corner-tick--tl { top: -4px; left: -4px; border-top: 1px solid; border-left: 1px solid; } .ds-corner-tick--tr { top: -4px; right: -4px; border-top: 1px solid; border-right: 1px solid; } .ds-corner-tick--bl { bottom: -4px; left: -4px; border-bottom: 1px solid; border-left: 1px solid; } .ds-corner-tick--br { bottom: -4px; right: -4px; border-bottom: 1px solid; border-right: 1px solid; } .ds-manifest-name { border-bottom: 1px solid rgba(244,241,234,0.15); padding: 2px 4px 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #b8c0cf; } .ds-manifest-photo { margin-top: 10px; aspect-ratio: 1; width: 100%; background: #1c2b42; } .ds-manifest-caption { margin-top: 10px; padding: 0 4px 2px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #b8c0cf; } .ds-manifest-stamp { position: absolute; bottom: -24px; left: 16px; display: flex; align-items: center; gap: 10px; transform: rotate(-2deg); border: 1px solid #0f1b2d; background: #f4f1ea; padding: 10px 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #0f1b2d; box-shadow: 0 10px 24px -8px rgb(0 0 0 / 0.55); } .ds-manifest-dot { width: 8px; height: 8px; border-radius: 50%; background: #1f7a4d; box-shadow: 0 0 0 2px rgba(31,122,77,0.25); }"
+    },
+    {
+      "name": "Proof Readout Tile",
+      "kind": "custom",
+      "refersTo": "proof-readout",
+      "description": "Dashboard-style stat tile with a signal-orange top rule, mono label, count-up display stat, and optional context line.",
+      "html": "<li class=\"ds-proof-tile\"><span class=\"ds-proof-tile-rule\" aria-hidden=\"true\"></span><p class=\"ds-proof-tile-label\">Listings optimized</p><p class=\"ds-proof-tile-stat\">120+</p><p class=\"ds-proof-tile-context\">Across active FBA catalogs</p></li>",
+      "css": ".ds-proof-tile { position: relative; display: flex; flex-direction: column; background: #f4f1ea; padding: 28px 24px; } .ds-proof-tile-rule { position: absolute; top: 0; left: 24px; width: 32px; height: 2px; background: #e8952e; } .ds-proof-tile-label { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #4a5568; } .ds-proof-tile-stat { margin-top: 20px; font-family: 'Space Grotesk', sans-serif; font-size: 28px; font-weight: 700; letter-spacing: -0.02em; color: #0f1b2d; } .ds-proof-tile-context { margin-top: auto; padding-top: 20px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; line-height: 1.6; color: #4a5568; }"
+    },
+    {
+      "name": "Primary Nav",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky ink nav bar with signal-orange underline hover state and a hamburger collapse below 1024px.",
+      "html": "<header class=\"ds-nav\"><nav class=\"ds-nav-inner\" aria-label=\"Primary\"><a class=\"ds-nav-brand\" href=\"#top\">Nilda Toraneo</a><ul class=\"ds-nav-links\"><li><a class=\"ds-nav-link\" href=\"#results\"><span>Results</span></a></li><li><a class=\"ds-nav-link\" href=\"#certifications\"><span>Certifications</span></a></li></ul></nav></header>",
+      "css": ".ds-nav { position: sticky; top: 0; background: #0f1b2d; color: #f4f1ea; border-bottom: 1px solid #2a3a54; } .ds-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: 64px; max-width: 72rem; margin: 0 auto; padding: 0 20px; } .ds-nav-brand { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; color: #f4f1ea; text-decoration: none; } .ds-nav-links { display: flex; align-items: center; gap: 10px; list-style: none; margin: 0; padding: 0; } .ds-nav-link { position: relative; display: inline-flex; min-height: 44px; align-items: center; padding: 0 6px; font-size: 13px; font-weight: 500; color: #b8c0cf; text-decoration: none; } .ds-nav-link span { position: relative; } .ds-nav-link span::after { content: ''; position: absolute; inset-inline: 0; bottom: -4px; height: 1px; background: #e8952e; transform: scaleX(0); transform-origin: left; transition: transform 200ms; } .ds-nav-link:hover span::after, .ds-nav-link:focus-visible span::after { transform: scaleX(1); } .ds-nav-link:focus-visible { outline: 2px solid #e8952e; outline-offset: 3px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ops Console Manifest",
+    "overview": "This world refuses the category default — the soft pastel-card, stock-desk-photo \"hire-me\" brochure every freelance-VA template ships. Instead it borrows the visual grammar of the workspace the subject actually runs: Seller Central dashboards, PPC readouts, shipping and inventory manifests, SKU and barcode labeling. A dark ink-navy console shell holds structure (nav, hero, dividers, footer); a warm paper-neutral ground holds content; signal orange is used the way warehouse signage uses it — flat, high-contrast, reserved for action and proof, never decoration; a verified green marks credential and checkmark states. Section headers read as manifest-row stamps (heading + thin rule + information-bearing mono tag), not soft card titles. The system fuses two material registers deliberately: dashboard/instrumentation chrome (mono labels, thin rule frames, count-up stat tiles) and shipping/warehouse signage (corner ticks, stamped credential tags, barcodes, dashed-rule training rows). It rejects two adjacent registers considered and set aside in design/brief.md: a straight 10-K report treatment (too close to the corporate-report cliché) and a trading-floor ticker (wrong trust register for a service-hiring decision).",
+    "keyCharacteristics": [
+      "Ink-navy structural chrome against a warm paper-neutral content ground; no third neutral competes with the two grounds.",
+      "Signal orange is rationed to primary action and proof highlights — it never decorates.",
+      "Section headers are manifest rows: h2 + thin rule + mono tag that must say something real (a count, a status), never a decorative eyebrow/kicker.",
+      "One shared easing curve (easeOutExpo) and one signature motion moment (staggered proof-strip reveal + count-up); no scattered hover effects elsewhere.",
+      "Every reveal's pre-visible (\"armed\") opacity is a computed accessibility floor, not a design flourish — it exists to keep WCAG AA contrast while dimmed."
+    ],
+    "rules": [
+      { "name": "The Warehouse-Signage Rule", "body": "Signal orange is flat and high-contrast, never a gradient, tint, or soft badge — reserved for the primary CTA and verified-proof highlights. If a screen shows more than one orange element competing for attention, that's a defect, not a style choice.", "section": "colors" },
+      { "name": "The Verified-Green Headroom Rule", "body": "`--verified` on `--paper` measures 4.71:1 at rest — just above the 4.5:1 AA floor for the small mono text it labels. Any scroll-reveal dimming a `--verified` element needs an armed-state opacity floor of ≥0.98. Darkening the token itself would give real headroom but is a palette change outside this record's scope.", "section": "colors" },
+      { "name": "The No-Eyebrow Rule", "body": "A section's mono tag is a manifest-row label, not a decorative kicker: it always carries real information. No section header may carry a mono tag with no informational content.", "section": "typography" },
+      { "name": "The Stamp-Is-The-Only-Shadow Rule", "body": "Box-shadow is reserved for the rotated credential-tag stamp motif. No card, button, or tile outside that one signature element gets a drop shadow.", "section": "elevation" },
+      { "name": "The Reveal-Opacity Floor Rule", "body": "Every scroll-reveal's pre-visible (\"armed\") state is an accessibility-computed opacity floor. Section.tsx arms at 0.98 (may contain --verified text); ProofStrip.tsx tiles arm at 0.9 (never contain --verified text). A future reveal must compute its own floor.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do ration signal orange to primary actions and verified-proof highlights; if you can't name the action or proof it marks, it isn't signal orange.",
+      "Do give every section-header mono tag real information (a count, ratio, or status) — the manifest-row header pattern requires it.",
+      "Do compute a new reveal component's armed-state opacity against whatever color it dims, not against a flat \"looks fine\" default; verified green needs ≥0.98, most other paper-ground text can go lower.",
+      "Do use the shared easeOutExpo curve (lib/motion.ts) for any new motion; it is the system's one easing, not one of several to choose from.",
+      "Do respect prefers-reduced-motion (lib/use-reduced-motion.ts) for any new animated component — every existing animation gates on it."
+    ],
+    "donts": [
+      "Don't add a decorative eyebrow/kicker above a heading. The system's only header ornament is the manifest-row mono tag, and it must carry real information — an eyebrow with no data is a device this world's own craft floor prohibits, not a lighter version of the tag.",
+      "Don't add a drop shadow to anything except the hero's stamped credential tag. Depth elsewhere comes from hairline borders and grid gaps.",
+      "Don't round a corner. No component in this system uses border-radius; introducing one breaks the printed-label/stamped-tag read the whole world is built on.",
+      "Don't reuse --verified green as a generic secondary accent color outside credential/checkmark states — its contrast margin is thin (4.71:1 at rest) and its meaning is semantic (verified), not decorative.",
+      "Don't treat the proof-strip's staggered count-up as a generic reveal pattern to sprinkle elsewhere; it is the page's one deliberate orchestrated motion moment per the brief, and repeating it dilutes the signature."
+    ]
+  }
+}

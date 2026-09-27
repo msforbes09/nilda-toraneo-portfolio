@@ -36,6 +36,7 @@
       "Bash(npx tsc:*)",
       "Bash(npx serve:*)",
       "Bash(npx lighthouse:*)",
+      "Bash(npx playwright:*)",
       "Bash(node:*)",
       "Bash(git remote:*)",
       "Bash(gh auth status:*)",

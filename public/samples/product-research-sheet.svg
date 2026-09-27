@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="440" viewBox="0 0 640 440" role="img" aria-label="Sample product research spreadsheet">
+  <rect width="640" height="440" fill="#f4f1ea"/>
+  <!-- window chrome -->
+  <rect width="640" height="40" fill="#0f1b2d"/>
+  <rect x="16" y="15" width="10" height="10" fill="#2a3a54"/>
+  <rect x="32" y="15" width="10" height="10" fill="#2a3a54"/>
+  <rect x="48" y="15" width="10" height="10" fill="#2a3a54"/>
+  <text x="76" y="25" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="#f4f1ea">product-research_q3.xlsx</text>
+  <!-- toolbar -->
+  <rect y="40" width="640" height="34" fill="#ebe6db"/>
+  <text x="20" y="62" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" fill="#4a5568">fx</text>
+  <rect x="40" y="50" width="340" height="16" fill="#f4f1ea" stroke="#d8d2c4"/>
+  <text x="48" y="62" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="#4a5568">=RANK(F3, F$3:F$8)</text>
+  <!-- header row -->
+  <rect x="20" y="90" width="600" height="30" fill="#0f1b2d"/>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" fill="#f4f1ea" letter-spacing="0.5">
+    <text x="30" y="109">PRODUCT</text>
+    <text x="250" y="109">DEMAND</text>
+    <text x="340" y="109">SEARCH VOL.</text>
+    <text x="450" y="109">COMPETITION</text>
+    <text x="570" y="109">SCORE</text>
+  </g>
+  <!-- rows -->
+  <g font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="12" fill="#17233a">
+    <rect x="20" y="120" width="600" height="36" fill="#f4f1ea"/>
+    <text x="30" y="143">Silicone baking mat, 2-pack</text>
+    <rect x="20" y="156" width="600" height="36" fill="#ebe6db"/>
+    <text x="30" y="179">Bamboo drawer organizer</text>
+    <rect x="20" y="192" width="600" height="36" fill="#f4f1ea"/>
+    <text x="30" y="215">Insulated lunch bag</text>
+    <rect x="20" y="228" width="600" height="36" fill="#ebe6db"/>
+    <text x="30" y="251">Pet grooming glove</text>
+    <rect x="20" y="264" width="600" height="36" fill="#f4f1ea"/>
+    <text x="30" y="287">Cable management box</text>
+    <rect x="20" y="300" width="600" height="36" fill="#ebe6db"/>
+    <text x="30" y="323">Reusable produce bags</text>
+  </g>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="#17233a">
+    <text x="250" y="143">High</text>
+    <text x="340" y="143">48,200</text>
+    <text x="570" y="143">8.6</text>
+    <text x="250" y="179">Med</text>
+    <text x="340" y="179">22,900</text>
+    <text x="570" y="179">7.1</text>
+    <text x="250" y="215">High</text>
+    <text x="340" y="215">61,400</text>
+    <text x="570" y="215">5.2</text>
+    <text x="250" y="251">Med</text>
+    <text x="340" y="251">18,300</text>
+    <text x="570" y="251">7.8</text>
+    <text x="250" y="287">Low</text>
+    <text x="340" y="287">9,700</text>
+    <text x="570" y="287">4.4</text>
+    <text x="250" y="323">Med</text>
+    <text x="340" y="323">15,800</text>
+    <text x="570" y="323">6.9</text>
+  </g>
+  <!-- competition pills -->
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="#f4f1ea">
+    <rect x="450" y="130" width="48" height="18" fill="#1f7a4d"/><text x="459" y="143">LOW</text>
+    <rect x="450" y="166" width="48" height="18" fill="#1f7a4d"/><text x="459" y="179">LOW</text>
+    <rect x="450" y="202" width="48" height="18" fill="#0f1b2d"/><text x="456" y="215">HIGH</text>
+    <rect x="450" y="238" width="48" height="18" fill="#c9771a"/><text x="459" y="251">MED</text>
+    <rect x="450" y="274" width="48" height="18" fill="#c9771a"/><text x="459" y="287">MED</text>
+    <rect x="450" y="310" width="48" height="18" fill="#0f1b2d"/><text x="456" y="323">HIGH</text>
+  </g>
+  <!-- top pick highlight -->
+  <rect x="20" y="120" width="600" height="36" fill="none" stroke="#e8952e" stroke-width="2"/>
+  <!-- grid rules -->
+  <g stroke="#d8d2c4">
+    <line x1="240" y1="120" x2="240" y2="336"/>
+    <line x1="330" y1="120" x2="330" y2="336"/>
+    <line x1="440" y1="120" x2="440" y2="336"/>
+    <line x1="560" y1="120" x2="560" y2="336"/>
+    <line x1="20" y1="336" x2="620" y2="336"/>
+  </g>
+  <text x="20" y="362" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="#4a5568">Sources: Helium 10 Black Box, Keepa, Google Trends · Score = demand × margin ÷ competition</text>
+  <!-- SAMPLE stamp -->
+  <g transform="rotate(-8 520 396)">
+    <rect x="444" y="374" width="152" height="44" fill="none" stroke="#c9771a" stroke-width="3"/>
+    <text x="520" y="405" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="700" letter-spacing="6" fill="#c9771a">SAMPLE</text>
+  </g>
+</svg>

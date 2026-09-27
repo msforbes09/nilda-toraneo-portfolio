@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="440" viewBox="0 0 640 440" role="img" aria-label="Sample supplier chat">
+  <rect width="640" height="440" fill="#ebe6db"/>
+  <!-- chat header -->
+  <rect width="640" height="52" fill="#0f1b2d"/>
+  <rect x="18" y="12" width="28" height="28" fill="#2a3a54"/>
+  <text x="32" y="31" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="12" fill="#f4f1ea">SF</text>
+  <text x="58" y="24" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="13" font-weight="700" fill="#f4f1ea">Sample Factory · kitchenware supplier</text>
+  <circle cx="62" cy="38" r="3.5" fill="#1f7a4d"/>
+  <text x="70" y="42" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="#b8c0cf">online · verified supplier</text>
+  <g font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="12.5">
+    <!-- assistant -->
+    <rect x="300" y="70" width="320" height="46" fill="#0f1b2d"/>
+    <text x="314" y="89" fill="#f4f1ea">Hi! Could you quote 500 units of the</text>
+    <text x="314" y="106" fill="#f4f1ea">40 × 30 cm silicone baking mat?</text>
+    <!-- supplier -->
+    <rect x="20" y="128" width="300" height="46" fill="#f4f1ea" stroke="#d8d2c4"/>
+    <text x="34" y="147" fill="#17233a">Unit price $1.85 at 500 pcs.</text>
+    <text x="34" y="164" fill="#17233a">Our MOQ is 1,000 pcs.</text>
+    <!-- assistant -->
+    <rect x="276" y="186" width="344" height="46" fill="#0f1b2d"/>
+    <text x="290" y="205" fill="#f4f1ea">Could you do $1.60 at 1,000, and accept</text>
+    <text x="290" y="222" fill="#f4f1ea">500 pcs as a trial order first?</text>
+    <!-- supplier -->
+    <rect x="20" y="244" width="316" height="46" fill="#f4f1ea" stroke="#d8d2c4"/>
+    <text x="34" y="263" fill="#17233a">OK: $1.65 at 1,000 pcs, and a trial</text>
+    <text x="34" y="280" fill="#17233a">of 500 pcs at $1.80.</text>
+    <!-- assistant -->
+    <rect x="392" y="302" width="228" height="30" fill="#0f1b2d"/>
+    <text x="406" y="321" fill="#f4f1ea">Deal. What is the lead time?</text>
+    <!-- supplier -->
+    <rect x="20" y="344" width="260" height="30" fill="#f4f1ea" stroke="#d8d2c4"/>
+    <text x="34" y="363" fill="#17233a">25 days after the deposit.</text>
+  </g>
+  <!-- negotiated terms marker -->
+  <rect x="20" y="244" width="316" height="46" fill="none" stroke="#e8952e" stroke-width="2"/>
+  <!-- composer -->
+  <rect x="0" y="392" width="640" height="48" fill="#f4f1ea"/>
+  <line x1="0" y1="392" x2="640" y2="392" stroke="#d8d2c4"/>
+  <text x="20" y="421" font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="12" fill="#4a5568">Type a message…</text>
+  <!-- SAMPLE stamp -->
+  <g transform="rotate(-8 520 404)">
+    <rect x="444" y="382" width="152" height="44" fill="#f4f1ea" stroke="#c9771a" stroke-width="3"/>
+    <text x="520" y="413" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="700" letter-spacing="6" fill="#c9771a">SAMPLE</text>
+  </g>
+</svg>

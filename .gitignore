@@ -1,5 +1,24 @@
-node_modules/
-.next/
-out/
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# env files: never committed, never edited by agents (see CLAUDE.md)
 .env*
+!.env.example
+
+# tooling
 .DS_Store
+npm-debug.log*
+.claude/worktrees/
+.impeccable/review/
+.impeccable/build/
+.impeccable/config.local.json
+.impeccable/hook.cache.json
