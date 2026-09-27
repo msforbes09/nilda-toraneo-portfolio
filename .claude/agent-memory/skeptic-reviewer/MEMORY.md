@@ -1,0 +1,1 @@
+- [Recurring findings](project_recurring_findings.md) — nav breakpoint vs HANDOFF px value, chrome copy hardcoded outside content/site.ts, sampleEntries as the sample-data seam, Escape-focus-return untested
