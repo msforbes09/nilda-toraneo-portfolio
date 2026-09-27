@@ -43,3 +43,20 @@ copy and test coverage on content the team authors, not a visitor supplies.
   phones the headline paints at rest, then dips to its faint start state and settles (under
   1s). This is deliberate (progressive enhancement: no JS failure can hide the headline); the
   browser check should judge whether the dip reads as a flicker at phone width.
+
+## Review round B (T3–T6 diff), 2026-09-28
+
+- **`components/sections/Contact.tsx`'s UI copy is hardcoded** (headings, status labels, empty/
+  error/success messages) rather than sourced from `content/site.ts`. Same Spec minor as round
+  A's identical finding on T2's chrome copy, same reason: structural UI text, not Nilda's facts,
+  low value to move.
+- **`lib/use-reduced-motion.ts`'s server-side (`typeof window === "undefined"`) branch has no
+  test.** jsdom always defines `window`, so the obvious test never exercises it. Correctness
+  minor (missing test). Accepted: the branch is a one-line guard with no visitor-facing path
+  today (the app has no SSR route that reads this hook before mount); revisit if a future page
+  renders motion-gated content during SSR.
+- **No test drives the contact form by keyboard end-to-end** (tab through name → email → message
+  → send, confirm the honeypot is skipped, Enter submits). Existing tests assert proxies (focus
+  calls, `tabIndex="-1"`) rather than a real tab sequence. Correctness minor (missing test).
+  Accepted: the handoff's own keyboard-nav check happens in the browser-checker step, which
+  exercises real Tab/Enter behavior more faithfully than a simulated jsdom walk would.
