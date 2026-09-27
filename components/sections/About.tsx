@@ -8,7 +8,7 @@ export function About() {
   return (
     <Section
       id="about"
-      title={navLabel(site, "about")}
+      title={`${navLabel(site, "about")} ${site.person.name}`}
       tag={`${experience.length} roles on file`}
     >
       <div className="grid gap-x-16 gap-y-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">

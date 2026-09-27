@@ -13,6 +13,14 @@ describe("About", () => {
     expect(screen.getByText(text)).toBeInTheDocument();
   });
 
+  it("names her in the section heading, for search engines and screen readers", () => {
+    render(<About />);
+
+    expect(
+      screen.getByRole("heading", { name: /Nilda Toraneo/ }),
+    ).toBeInTheDocument();
+  });
+
   it("lists each role with its employer and date range", () => {
     render(<About />);
 
