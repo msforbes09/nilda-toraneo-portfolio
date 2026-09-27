@@ -2,7 +2,15 @@ import { navLabel } from "@/content/helpers";
 import { site } from "@/content/site";
 import { Section } from "../Section";
 
-/** Stub: T3 replaces the body with the eight services. */
+/** "SVC-01": the service's line code on the manifest. */
+function lineCode(index: number): string {
+  return `SVC-${String(index + 1).padStart(2, "0")}`;
+}
+
+/**
+ * The eight services as manifest lines: a line code and the service name on
+ * the left, the seller's question and her description on the right.
+ */
 export function Services() {
   return (
     <Section
@@ -10,7 +18,29 @@ export function Services() {
       title={navLabel(site, "services")}
       tag={`${site.services.length} services`}
     >
-      <p className="text-text-on-paper-soft">Services are being added.</p>
+      <ol aria-labelledby="services-heading" className="border-t-2 border-ink">
+        {site.services.map((service, i) => (
+          <li
+            key={service.name}
+            className="grid gap-x-10 gap-y-3 border-b border-paper-line py-8 md:grid-cols-[13rem_minmax(0,1fr)] md:py-10"
+          >
+            <p className="flex items-baseline gap-3 font-mono text-xs tracking-[0.12em] uppercase md:flex-col md:gap-2">
+              <span className="text-text-on-paper-soft tabular-nums">
+                {lineCode(i)}
+              </span>
+              <span className="font-medium text-ink">{service.name}</span>
+            </p>
+            <div>
+              <h3 className="max-w-[30ch] font-display text-[clamp(1.375rem,1.15rem+0.9vw,1.875rem)] leading-[1.15] font-bold tracking-[-0.02em] text-balance text-ink">
+                {service.question}
+              </h3>
+              <p className="mt-4 max-w-[68ch] text-base leading-relaxed text-text-on-paper md:text-[1.0625rem]">
+                {service.description}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </Section>
   );
 }
