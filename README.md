@@ -20,5 +20,5 @@ replaces.
 
 ## Deploy
 
-`.github/workflows/deploy.yml` builds `out/` with `NEXT_PUBLIC_BASE_PATH=/nilda-portfolio` and
+`.github/workflows/deploy.yml` builds `out/` with `NEXT_PUBLIC_BASE_PATH=/nilda-toraneo-portfolio` and
 publishes it to GitHub Pages on every push to `main`, or manually via `workflow_dispatch`.
