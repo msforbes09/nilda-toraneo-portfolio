@@ -1,1 +1,1 @@
-- [Recurring findings](project_recurring_findings.md) — nav breakpoint vs HANDOFF px value, chrome copy hardcoded outside content/site.ts, sampleEntries as the sample-data seam, Escape-focus-return untested
+- [Recurring findings](project_recurring_findings.md) — nav breakpoint vs HANDOFF px value, chrome copy outside content/site.ts (check TODO.md logs it), sampleEntries seam, Escape-focus-return untested, sample hrefs need a real public/ file, duplicated Sample badge JSX, untested SSR-default motion hooks
