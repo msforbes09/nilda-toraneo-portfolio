@@ -21,3 +21,4 @@ npm-debug.log*
 .impeccable/review/
 .impeccable/build/
 .impeccable/config.local.json
+.impeccable/hook.cache.json
