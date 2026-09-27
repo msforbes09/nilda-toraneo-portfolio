@@ -1,3 +1,4 @@
 - [Content model](project_content_model.md) — sample:true / copyToApprove flags in content/site.ts, sampleEntries test, withBasePath for assets
 - [Worktree shell guard](feedback_worktree_shell.md) — heredoc/compound, `cd`+git, spaced binary paths refused; Write tool, bare git
 - [Test gotchas](project_test_gotchas.md) — next/font mock, next/image unoptimized+withBasePath, layout SSR realm, focus-ring tone-ink
+- [Meta routes + static export](project_meta_routes_static_export.md) — sitemap/robots/opengraph-image need `dynamic = "force-static"`; OG image basePath relies on NEXT_PUBLIC_SITE_URL already including the subpath
