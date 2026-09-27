@@ -48,8 +48,8 @@ export function ProofStrip() {
   );
 }
 
-/** A tile waiting below the fold: still legible, just dimmed and lowered. */
-const waiting = { opacity: 0.2, y: 14 };
+/** A tile waiting below the fold: lowered and barely dimmed, so its text keeps AA contrast. */
+const waiting = { opacity: 0.9, y: 14 };
 const settled = { opacity: 1, y: 0 };
 
 /** Seconds between neighbouring tiles in a row; a phone column has none. */

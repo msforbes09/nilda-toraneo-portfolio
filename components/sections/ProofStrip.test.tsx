@@ -43,7 +43,10 @@ describe("ProofStrip", () => {
     await waitFor(() => {
       expect(result).toHaveTextContent("ACoS 38% → 38%");
       expect(years).toHaveTextContent("0+ years as Amazon Account Manager");
-      expect(Number(result.style.opacity || "1")).toBeLessThan(1);
+      const opacity = Number(result.style.opacity || "1");
+      expect(opacity).toBeLessThan(1);
+      // A contrast floor: dimming the whole tile blends text into its ground.
+      expect(opacity).toBeGreaterThanOrEqual(0.9);
     });
 
     act(() => enterView());

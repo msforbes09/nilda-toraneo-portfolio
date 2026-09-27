@@ -38,9 +38,13 @@ describe("Section", () => {
     placeBelowFold();
     const { region, body } = renderServices();
 
-    await waitFor(() =>
-      expect(Number(body.style.opacity || "1")).toBeLessThan(1),
-    );
+    await waitFor(() => {
+      const opacity = Number(body.style.opacity || "1");
+      expect(opacity).toBeLessThan(1);
+      // A contrast floor: dimming blends text into its ground, and verified green
+      // on paper (4.71:1 at rest) drops under 4.5:1 below 0.975.
+      expect(opacity).toBeGreaterThanOrEqual(0.98);
+    });
     expect(region).toHaveTextContent("Body");
     expect(body).not.toHaveAttribute("aria-hidden");
 

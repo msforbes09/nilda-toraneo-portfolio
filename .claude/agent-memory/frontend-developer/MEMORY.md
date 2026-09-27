@@ -2,5 +2,5 @@
 - [Worktree shell guard](feedback_worktree_shell.md) — heredoc/compound, `cd`+git, spaced binary paths refused; Write tool, bare git
 - [Contact form](project_contact_form.md) — reducer+hook in lib/, env read per render, honeypot, a11y-name spacing, no trailers
 - [Test gotchas](project_test_gotchas.md) — next/font mock, next/image unoptimized+withBasePath, layout SSR realm, focus-ring tone-ink, list/listitem names, SVG preview
-- [Motion](project_motion.md) — rest/armed/shown reveal, skipAnimations in setup, test/support/motion seams, IO global not stubbable
+- [Motion](project_motion.md) — rest/armed/shown reveal, armed-opacity contrast floor (0.98), test seams, IO global not stubbable
 - [Meta routes + SEO](project_meta_routes_static_export.md) — force-static meta routes, OG basePath via SITE_URL, canonical per page, JSON-LD component

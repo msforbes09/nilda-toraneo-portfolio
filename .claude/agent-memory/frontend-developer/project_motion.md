@@ -19,6 +19,13 @@ metadata:
   property", so the helper assigns it and restores it in `onTestFinished`.
 - `Number("")` is 0: to assert "dimmed", use `Number(el.style.opacity || "1") < 1`, or the
   check passes vacuously when no style was ever set.
+- Armed/waiting opacity has a WCAG contrast floor: opacity blends text and its ground, and every
+  below-fold section is armed on load, so Lighthouse/crawlers audit the dimmed state (0.2 gave 156
+  contrast failures). Verified green on paper is 4.71:1 at rest and fails below 0.975, so
+  `Section` armed is 0.98 (the `y` rise carries the reveal); ProofStrip `waiting` is 0.9 (no
+  verified green in tiles). Tests assert the floor. Verify with `npx serve out -l 4180` plus
+  `npx lighthouse ... --only-categories=accessibility --form-factor=mobile`, reading
+  `audits['color-contrast']` from the JSON with `node -e`. Shell `test` is aliased: use `[ ]`.
 - Don't run `prettier --write test/support` as a directory: it reformats the kit's hook
   fixtures (`run-hook.mjs`, `fixtures/`). Name files explicitly.
 

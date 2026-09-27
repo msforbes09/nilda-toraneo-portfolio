@@ -23,12 +23,14 @@ const tagTones: Record<Tone, string> = {
 };
 
 /**
- * Every section's one quiet reveal: a short fade and rise, deliberately
- * plainer than the proof strip's staggered count-up.
+ * Every section's one quiet reveal: a short rise with a trace of fade, deliberately
+ * plainer than the proof strip's staggered count-up. The armed state stays
+ * near-opaque: opacity dims text and its ground together, and verified green
+ * on paper (4.71:1 at rest) fails WCAG AA contrast below 0.975.
  */
 const reveal = {
   rest: { opacity: 1, y: 0, transition: { duration: 0 } },
-  armed: { opacity: 0.2, y: 24, transition: { duration: 0 } },
+  armed: { opacity: 0.98, y: 24, transition: { duration: 0 } },
   shown: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOutExpo } },
 };
 
