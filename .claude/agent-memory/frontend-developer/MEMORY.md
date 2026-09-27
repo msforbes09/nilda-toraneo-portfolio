@@ -1,0 +1,2 @@
+- [Content model](project_content_model.md) — sample:true / copyToApprove flags in content/site.ts, sampleEntries test, withBasePath for assets
+- [Worktree shell guard](feedback_worktree_shell.md) — heredoc/compound commands get refused; use Write tool, plain git commands
