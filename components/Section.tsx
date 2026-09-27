@@ -1,4 +1,9 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { motion } from "motion/react";
+import { type ReactNode, useRef } from "react";
+import { easeOutExpo } from "@/lib/motion";
+import { useScrollReveal } from "@/lib/use-scroll-reveal";
 
 export type Tone = "paper" | "ink";
 
@@ -15,6 +20,16 @@ const ruleTones: Record<Tone, string> = {
 const tagTones: Record<Tone, string> = {
   paper: "text-text-on-paper-soft",
   ink: "text-text-on-ink-soft",
+};
+
+/**
+ * Every section's one quiet reveal: a short fade and rise, deliberately
+ * plainer than the proof strip's staggered count-up.
+ */
+const reveal = {
+  rest: { opacity: 1, y: 0, transition: { duration: 0 } },
+  armed: { opacity: 0.2, y: 24, transition: { duration: 0 } },
+  shown: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOutExpo } },
 };
 
 type SectionProps = {
@@ -38,6 +53,8 @@ export function Section({
   children,
 }: SectionProps) {
   const headingId = `${id}-heading`;
+  const body = useRef<HTMLDivElement>(null);
+  const phase = useScrollReveal(body);
 
   return (
     <section
@@ -45,7 +62,13 @@ export function Section({
       aria-labelledby={headingId}
       className={`${tones[tone]} px-5 pt-24 pb-20 sm:px-8 md:pt-32 md:pb-28`}
     >
-      <div className="mx-auto max-w-6xl">
+      <motion.div
+        ref={body}
+        initial={false}
+        animate={phase}
+        variants={reveal}
+        className="mx-auto max-w-6xl"
+      >
         <header className="mb-10 flex flex-wrap items-baseline gap-x-5 gap-y-3 md:mb-14">
           <h2
             id={headingId}
@@ -64,7 +87,7 @@ export function Section({
           </span>
         </header>
         {children}
-      </div>
+      </motion.div>
     </section>
   );
 }

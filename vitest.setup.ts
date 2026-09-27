@@ -1,6 +1,11 @@
 import "@testing-library/jest-dom/vitest";
 import { cleanup } from "@testing-library/react";
+import { MotionGlobalConfig } from "motion/react";
 import { afterEach, vi } from "vitest";
+
+// Motion jumps every animation to its end state: tests assert where motion
+// starts and lands, never timing, and never wait on real frames.
+MotionGlobalConfig.skipAnimations = true;
 
 afterEach(() => {
   cleanup();

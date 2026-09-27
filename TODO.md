@@ -27,3 +27,19 @@ copy and test coverage on content the team authors, not a visitor supplies.
   Correctness minor (missing test). Accepted: `content/site.ts` is a trusted, reviewed file only
   the team edits; the current testimonials already comply. Revisit if the testimonials become
   editable by someone outside the team.
+
+## T5 (motion), 2026-09-27
+
+- **Proof readout split has no fallback when `display` lacks `${value}${suffix}`.**
+  `components/sections/ProofStrip.tsx` `splitReadout` finds the number to count up inside the
+  tile's display text. A tile whose display omits that number would render garbled. Accepted:
+  `content/site.ts` is trusted and the existing ProofStrip test pins every current display
+  string, so a mismatched edit fails CI. Add a plain-text fallback if tiles become
+  client-editable.
+- **Hero entrance replays if a visitor turns reduced motion off mid-visit.** The entrance effect
+  keys on the live setting. Accepted: rare, harmless (the lines just re-settle), and
+  guarding it adds state for no visitor-facing gain.
+- **Hero entrance starts after hydration, from the server-rendered visible page.** On slow
+  phones the headline paints at rest, then dips to its faint start state and settles (under
+  1s). This is deliberate (progressive enhancement: no JS failure can hide the headline); the
+  browser check should judge whether the dip reads as a flicker at phone width.

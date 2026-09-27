@@ -244,7 +244,7 @@ function IntakeForm({
                 ref={sendRef}
                 type="submit"
                 aria-busy={submitting || undefined}
-                className={`group inline-flex min-h-14 items-center gap-3 px-7 font-display text-base font-bold transition-colors duration-150 ${
+                className={`group inline-flex min-h-14 items-center gap-3 px-7 font-display text-base font-bold transition-[background-color,scale] duration-150 enabled:active:scale-[0.97] ${
                   submitting
                     ? "cursor-progress bg-signal text-ink"
                     : "bg-signal text-ink hover:bg-[#f2a54a] disabled:cursor-not-allowed disabled:bg-paper-line disabled:text-text-on-paper-soft"

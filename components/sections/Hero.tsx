@@ -1,6 +1,12 @@
+"use client";
+
+import { stagger, useAnimate } from "motion/react";
 import Image from "next/image";
+import { useEffect } from "react";
 import { withBasePath } from "@/content/helpers";
 import { site } from "@/content/site";
+import { easeOutExpo } from "@/lib/motion";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 
 const { hero, person } = site;
 
@@ -9,9 +15,46 @@ const headlineLines = hero.headline
   .split(", ")
   .map((line, i, all) => (i < all.length - 1 ? `${line}, ` : line));
 
+/**
+ * The entrance: headline lines rise and sharpen in turn, then the credential
+ * tag lands like a stamp. It runs once after mount from the server-rendered,
+ * fully visible page, so nothing waits on it; the CTAs never move.
+ */
+function useHeroEntrance() {
+  const [scope, animate] = useAnimate<HTMLElement>();
+  const reduced = useReducedMotion();
+
+  useEffect(() => {
+    if (reduced) return;
+    const controls = animate([
+      [
+        "[data-entrance='line']",
+        {
+          opacity: [0.15, 1],
+          y: ["0.35em", "0em"],
+          filter: ["blur(6px)", "blur(0px)"],
+        },
+        { duration: 0.9, delay: stagger(0.09), ease: easeOutExpo },
+      ],
+      [
+        "[data-entrance='tag']",
+        { opacity: [0.2, 1], scale: [1.18, 1] },
+        { duration: 0.6, ease: easeOutExpo, at: 0.3 },
+      ],
+    ]);
+    // Leaving mid-entrance snaps to the end state, never a half-faded line.
+    return () => controls.complete();
+  }, [reduced, animate]);
+
+  return scope;
+}
+
 export function Hero() {
+  const scope = useHeroEntrance();
+
   return (
     <section
+      ref={scope}
       id="top"
       aria-labelledby="hero-heading"
       className="tone-ink relative isolate overflow-hidden bg-ink text-text-on-ink"
@@ -24,7 +67,7 @@ export function Hero() {
             className="font-display text-[clamp(2.375rem,1.5rem+3.6vw,4.5rem)] leading-[1.02] font-bold tracking-[-0.035em]"
           >
             {headlineLines.map((line) => (
-              <span key={line} className="block">
+              <span key={line} data-entrance="line" className="block">
                 {line}
               </span>
             ))}
@@ -35,7 +78,7 @@ export function Hero() {
           <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
             <a
               href={hero.primaryCta.href}
-              className="group inline-flex min-h-14 items-center gap-3 bg-signal px-7 font-display text-base font-bold text-ink transition-colors duration-150 hover:bg-[#f2a54a]"
+              className="group inline-flex min-h-14 items-center gap-3 bg-signal px-7 font-display text-base font-bold text-ink transition-[background-color,scale] duration-150 hover:bg-[#f2a54a] active:scale-[0.97]"
             >
               {hero.primaryCta.label}
               <ArrowIcon />
@@ -80,7 +123,10 @@ function ManifestCard() {
         </figcaption>
       </div>
 
-      <p className="absolute -bottom-6 left-4 flex -rotate-2 items-center gap-2.5 border border-ink bg-paper px-3.5 py-2.5 font-mono text-[0.6875rem] font-medium tracking-[0.12em] text-ink uppercase shadow-[0_10px_24px_-8px_rgb(0_0_0/0.55)] sm:-left-6">
+      <p
+        data-entrance="tag"
+        className="absolute -bottom-6 left-4 flex -rotate-2 items-center gap-2.5 border border-ink bg-paper px-3.5 py-2.5 font-mono text-[0.6875rem] font-medium tracking-[0.12em] text-ink uppercase shadow-[0_10px_24px_-8px_rgb(0_0_0/0.55)] sm:-left-6"
+      >
         <span
           aria-hidden="true"
           className="size-2 shrink-0 rounded-full bg-verified ring-2 ring-verified/25"
