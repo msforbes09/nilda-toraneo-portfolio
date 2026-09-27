@@ -22,6 +22,14 @@ describe("Home page", () => {
     ]);
   });
 
+  it("carries one JSON-LD block for search engines", () => {
+    const { container } = render(<Home />);
+
+    expect(
+      container.querySelectorAll('script[type="application/ld+json"]'),
+    ).toHaveLength(1);
+  });
+
   it("renders no pricing section while there are no tiers", () => {
     const { container } = render(<Home />);
 

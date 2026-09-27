@@ -39,6 +39,10 @@ describe("layout metadata", () => {
     },
   );
 
+  it("declares the home page as its canonical URL", () => {
+    expect(metadata.alternates?.canonical).toBe("/");
+  });
+
   it("shares the page title through Open Graph and Twitter cards", () => {
     expect(metadata.openGraph).toMatchObject({
       type: "website",

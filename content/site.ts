@@ -100,6 +100,14 @@ export type Testimonial = Sample<{
   attribution: string;
 }>;
 
+export type Address = {
+  locality: string;
+  region: string;
+  country: string;
+  /** ISO 3166-1 alpha-2, for structured data. */
+  countryCode: string;
+};
+
 export type PricingTier = { name: string; price: string; includes: string[] };
 
 export type Site = {
@@ -107,7 +115,9 @@ export type Site = {
   person: {
     name: string;
     title: string;
+    /** Display form of `address`. */
     location: string;
+    address: Address;
     email: string;
     linkedin: string;
     linkedinHeadline: string;
@@ -132,6 +142,13 @@ export type Site = {
 const linkedinHeadline =
   "I help Amazon sellers scale their business through expert Account Management, data-driven Product Research, and efficient Admin Support.";
 
+const address: Address = {
+  locality: "Alfonso",
+  region: "Calabarzon",
+  country: "Philippines",
+  countryCode: "PH",
+};
+
 export const site: Site = {
   meta: {
     title: "Nilda Toraneo — Amazon Account Manager & Admin Virtual Assistant",
@@ -143,7 +160,8 @@ export const site: Site = {
   person: {
     name: "Nilda Toraneo",
     title: "Amazon Account Manager | Admin Virtual Assistant",
-    location: "Alfonso, Calabarzon, Philippines",
+    location: `${address.locality}, ${address.region}, ${address.country}`,
+    address,
     email: "nildatoraneo@gmail.com",
     linkedin: "https://www.linkedin.com/in/nilda-toraneo/",
     linkedinHeadline,

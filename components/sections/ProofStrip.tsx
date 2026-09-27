@@ -7,6 +7,7 @@ import { navLabel } from "@/content/helpers";
 import { site } from "@/content/site";
 import { easeOutExpo } from "@/lib/motion";
 import { useScrollReveal } from "@/lib/use-scroll-reveal";
+import { SampleTag } from "../SampleTag";
 
 const { tiles } = site.proof;
 const sampleCount = tiles.filter((tile) => tile.sample).length;
@@ -129,11 +130,7 @@ function ProofReadout({ tile }: { tile: ProofTile }) {
         <p className="font-mono text-[0.6875rem] leading-snug tracking-[0.12em] text-text-on-paper-soft uppercase">
           {tile.label}
         </p>
-        {tile.sample && (
-          <span className="shrink-0 bg-signal px-1.5 py-0.5 font-mono text-[0.625rem] font-medium tracking-[0.14em] text-ink uppercase">
-            Sample
-          </span>
-        )}
+        {tile.sample && <SampleTag />}
       </div>
       <p className="mt-5 font-display text-[1.625rem] leading-[1.1] font-bold tracking-[-0.02em] text-balance text-ink md:text-[1.75rem]">
         {before}

@@ -1,5 +1,6 @@
 import { navLabel } from "@/content/helpers";
 import { site } from "@/content/site";
+import { SampleTag } from "../SampleTag";
 import { Section } from "../Section";
 
 /** Client quotes as annotated notes on the manifest, each tagged while it is a sample. */
@@ -21,11 +22,7 @@ export function Testimonials() {
                 <span className="tabular-nums">
                   Note {String(i + 1).padStart(2, "0")}
                 </span>
-                {testimonial.sample && (
-                  <span className="bg-signal px-1.5 py-0.5 text-[0.625rem] font-medium tracking-[0.14em] text-ink">
-                    Sample
-                  </span>
-                )}
+                {testimonial.sample && <SampleTag />}
               </p>
               <blockquote className="mt-6 max-w-[40ch] font-display text-[clamp(1.25rem,1.05rem+0.8vw,1.625rem)] leading-snug font-medium tracking-[-0.015em] text-ink">
                 <p>{testimonial.quote}</p>

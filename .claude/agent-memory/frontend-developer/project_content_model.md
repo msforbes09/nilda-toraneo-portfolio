@@ -16,4 +16,6 @@ Nilda (the client) can replace them; never present sample numbers or quotes as r
 **How to apply:** when adding a placeholder item, flag it `sample: true`, add it to the top comment
 AND to the expected list in `content/helpers.test.ts`. Asset paths in content are root-relative;
 wrap them with `withBasePath()` in components (GitHub Pages serves under `/nilda-portfolio`).
-Real items with a `sample` field (proof tiles) use `sample: false`.
+Real items with a `sample` field (proof tiles) use `sample: false`. Render the visible tag with
+`components/SampleTag.tsx` (`variant="outline"` inside a link), never a hand-rolled chip.
+`public/resume-sample.pdf` is a hand-built one-page placeholder PDF (no PDF lib in deps).

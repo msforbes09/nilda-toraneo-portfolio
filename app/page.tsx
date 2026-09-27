@@ -8,6 +8,7 @@ import { ProofStrip } from "@/components/sections/ProofStrip";
 import { Services } from "@/components/sections/Services";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { Work } from "@/components/sections/Work";
+import { StructuredData } from "@/components/StructuredData";
 
 /** Section order per design/brief.md §6; the footer lives in the layout. */
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <Testimonials />
       <PricingSlot />
       <Contact />
+      <StructuredData />
     </main>
   );
 }

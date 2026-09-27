@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { navLabel, withBasePath } from "@/content/helpers";
 import { site } from "@/content/site";
+import { SampleTag } from "../SampleTag";
 import { Section } from "../Section";
 
 /** The sample-work images are authored at this size (public/samples/*.svg). */
@@ -26,11 +27,7 @@ export function Work() {
                 <span className="tabular-nums">
                   File {String(i + 1).padStart(2, "0")}
                 </span>
-                {item.sample && (
-                  <span className="bg-signal px-1.5 py-0.5 text-[0.625rem] font-medium tracking-[0.14em] text-ink">
-                    Sample
-                  </span>
-                )}
+                {item.sample && <SampleTag />}
               </p>
               <Image
                 src={withBasePath(item.image)}

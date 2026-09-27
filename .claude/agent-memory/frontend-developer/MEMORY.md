@@ -1,6 +1,6 @@
-- [Content model](project_content_model.md) — sample:true / copyToApprove flags in content/site.ts, sampleEntries test, withBasePath for assets
+- [Content model](project_content_model.md) — sample:true / copyToApprove flags, SampleTag component, sampleEntries test, withBasePath
 - [Worktree shell guard](feedback_worktree_shell.md) — heredoc/compound, `cd`+git, spaced binary paths refused; Write tool, bare git
 - [Contact form](project_contact_form.md) — reducer+hook in lib/, env read per render, honeypot, a11y-name spacing, no trailers
 - [Test gotchas](project_test_gotchas.md) — next/font mock, next/image unoptimized+withBasePath, layout SSR realm, focus-ring tone-ink, list/listitem names, SVG preview
 - [Motion](project_motion.md) — rest/armed/shown reveal, skipAnimations in setup, test/support/motion seams, IO global not stubbable
-- [Meta routes + static export](project_meta_routes_static_export.md) — sitemap/robots/opengraph-image need `dynamic = "force-static"`; OG image basePath relies on NEXT_PUBLIC_SITE_URL already including the subpath
+- [Meta routes + SEO](project_meta_routes_static_export.md) — force-static meta routes, OG basePath via SITE_URL, canonical per page, JSON-LD component

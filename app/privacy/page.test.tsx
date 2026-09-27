@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { site } from "@/content/site";
-import PrivacyPage from "./page";
+import PrivacyPage, { metadata } from "./page";
 
 describe("Privacy page", () => {
   it("names Nilda Toraneo, the third-party form service and her email", () => {
@@ -17,5 +17,9 @@ describe("Privacy page", () => {
 
     const home = screen.getByRole("link", { name: /back to home/i });
     expect(home).toHaveAttribute("href", "/");
+  });
+
+  it("declares its own canonical URL", () => {
+    expect(metadata.alternates?.canonical).toBe("/privacy");
   });
 });

@@ -32,6 +32,14 @@ Root `app/*.test.ts(x)` unit/component tests for these files just import the def
 call it directly (sitemap/robots) or render it with RTL (privacy/not-found pages) — no special
 Next test harness needed, same `vitest.config.ts` setup as the rest of the app.
 
+SEO (follow-up slice, 2026-09-28): `metadataBase` alone emits no `<link rel="canonical">`; each
+page sets `alternates.canonical` ("/" in the layout, "/privacy" on the privacy page). Next joins
+it onto metadataBase's *pathname* (subpath kept) and appends the slash for `trailingSlash`, so
+the built tag reads `<siteUrl>/privacy/`, matching the sitemap. JSON-LD lives in
+`components/StructuredData.tsx` (Person + Service `@graph`, from `site` only, `<` escaped); it is
+the codebase's single sanctioned `dangerouslySetInnerHTML`. `site.person.address` is structured
+(with `countryCode`) and `location` is derived from it.
+
 **Why:** learned building the meta pages (T6 of handoff 001, 2026-09-27).
 
 **How to apply:** any new file-convention metadata route (manifest.ts, another opengraph-image,

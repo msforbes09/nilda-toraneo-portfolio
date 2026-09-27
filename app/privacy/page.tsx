@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy — Nilda Toraneo",
   description:
     "How this site handles the information you send through its contact form, and who to ask about it.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

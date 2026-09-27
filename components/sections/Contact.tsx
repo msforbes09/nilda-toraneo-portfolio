@@ -5,6 +5,7 @@ import { navLabel, withBasePath } from "@/content/helpers";
 import { site } from "@/content/site";
 import type { ContactField, ContactState } from "@/lib/contact-form";
 import { useContactForm } from "@/lib/use-contact-form";
+import { SampleTag } from "../SampleTag";
 import { Section } from "../Section";
 
 const { person, resume } = site;
@@ -72,20 +73,12 @@ function DirectLines() {
             <span className={rowLabel}>Resume</span>{" "}
             <span className="flex flex-wrap items-center gap-x-3 gap-y-1.5">
               <span className={rowValue}>{resume.label}</span>{" "}
-              {resume.sample && <SampleTag />}
+              {resume.sample && <SampleTag variant="outline" />}
             </span>
           </a>
         </li>
       </ul>
     </div>
-  );
-}
-
-function SampleTag() {
-  return (
-    <span className="border border-ink px-1.5 py-0.5 font-mono text-[0.625rem] leading-none font-medium tracking-[0.14em] text-ink uppercase">
-      Sample
-    </span>
   );
 }
 
