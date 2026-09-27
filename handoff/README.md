@@ -33,4 +33,5 @@ Each task has its own folder, `NNN-short-name/`, containing two files:
 
 | # | Task | Status |
 |---|---|---|
-| 001 | site — toolchain, one-page portfolio, deploy to GitHub Pages preview | running |
+| 001 | site — toolchain, one-page portfolio, deploy to GitHub Pages preview | Verified: sent back → 002 |
+| 002 | finish-001 — og:url fix, screenshots, re-verify for PR #1 | running |
