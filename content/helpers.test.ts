@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { formatIssued, sampleEntries, withBasePath } from "./helpers";
+import {
+  formatIssued,
+  formatRange,
+  navLabel,
+  sampleEntries,
+  withBasePath,
+} from "./helpers";
 import { site } from "./site";
 
 describe("sampleEntries", () => {
@@ -29,6 +35,25 @@ describe("withBasePath", () => {
     ["https://a.b/c", "/x", "https://a.b/c"],
   ])("maps %s under base %s to %s", (path, basePath, expected) => {
     expect(withBasePath(path, basePath)).toBe(expected);
+  });
+});
+
+describe("formatRange", () => {
+  it.each([
+    ["2024-06", null, "Jun 2024 – present"],
+    ["2015-03", "2022-03", "Mar 2015 – Mar 2022"],
+  ])("formats %s to %s as %s", (start, end, expected) => {
+    expect(formatRange(start, end)).toBe(expected);
+  });
+});
+
+describe("navLabel", () => {
+  it("returns the nav label for a section id", () => {
+    expect(navLabel(site, "process")).toBe("How I work");
+  });
+
+  it("throws for an id the nav does not list", () => {
+    expect(() => navLabel(site, "pricing")).toThrow("pricing");
   });
 });
 

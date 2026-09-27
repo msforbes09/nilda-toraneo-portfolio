@@ -67,11 +67,28 @@ const MONTHS = [
   "Dec",
 ];
 
+/** "2024-06" -> "Jun 2024". */
+function formatMonth(date: string): string {
+  const [year, month] = date.split("-");
+  return `${MONTHS[Number(month) - 1]} ${year}`;
+}
+
+/** ("2015-03", "2022-03") -> "Mar 2015 – Mar 2022"; a null end reads "present". */
+export function formatRange(start: string, end: string | null): string {
+  return `${formatMonth(start)} – ${end ? formatMonth(end) : "present"}`;
+}
+
+/** The nav label for a section id; section headings reuse it. */
+export function navLabel(site: Site, id: string): string {
+  const item = site.nav.find((entry) => entry.id === id);
+  if (!item) throw new Error(`No nav item for section "${id}"`);
+  return item.label;
+}
+
 /**
  * "2024-06" -> "Issued Jun 2024". Certifications only ever show their issue
  * date; the site never labels one as expired.
  */
 export function formatIssued(date: string): string {
-  const [year, month] = date.split("-");
-  return `Issued ${MONTHS[Number(month) - 1]} ${year}`;
+  return `Issued ${formatMonth(date)}`;
 }

@@ -57,3 +57,25 @@ body {
   color: var(--text-on-paper);
   font-family: var(--font-body);
 }
+
+/*
+  Focus rings: ink on the paper ground, signal orange inside ink chrome
+  (`.tone-ink`). Signal on paper would miss the 3:1 non-text contrast.
+*/
+:root {
+  --focus-ring: var(--ink);
+}
+
+.tone-ink {
+  --focus-ring: var(--signal);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--signal);
+  color: var(--ink);
+}
