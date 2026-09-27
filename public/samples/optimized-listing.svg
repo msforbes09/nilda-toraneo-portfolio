@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="440" viewBox="0 0 640 440" role="img" aria-label="Sample optimized Amazon listing">
+  <rect width="640" height="440" fill="#f4f1ea"/>
+  <!-- browser bar -->
+  <rect width="640" height="40" fill="#0f1b2d"/>
+  <rect x="16" y="11" width="460" height="18" fill="#1c2b42"/>
+  <text x="26" y="24" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="#b8c0cf">amazon.com/dp/B0SAMPLE00</text>
+  <!-- main image -->
+  <rect x="20" y="58" width="220" height="220" fill="#ebe6db" stroke="#d8d2c4"/>
+  <rect x="52" y="104" width="156" height="128" rx="10" fill="#e8952e"/>
+  <rect x="64" y="116" width="132" height="104" rx="4" fill="none" stroke="#f4f1ea" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="130" y="173" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="11" fill="#0f1b2d">40 × 30 cm</text>
+  <!-- thumbnail row -->
+  <rect x="20" y="288" width="48" height="48" fill="#ebe6db" stroke="#0f1b2d" stroke-width="2"/>
+  <rect x="77" y="288" width="48" height="48" fill="#ebe6db" stroke="#d8d2c4"/>
+  <rect x="134" y="288" width="48" height="48" fill="#ebe6db" stroke="#d8d2c4"/>
+  <rect x="191" y="288" width="48" height="48" fill="#ebe6db" stroke="#d8d2c4"/>
+  <rect x="30" y="302" width="28" height="20" rx="3" fill="#e8952e"/>
+  <rect x="87" y="298" width="28" height="28" fill="#1c2b42"/>
+  <text x="158" y="316" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="9" fill="#4a5568">A+</text>
+  <polygon points="203,326 215,300 227,326" fill="#1f7a4d"/>
+  <!-- title -->
+  <g font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="15" font-weight="700" fill="#0f1b2d">
+    <text x="262" y="76">Silicone Baking Mat 2-Pack, Non-Stick</text>
+    <text x="262" y="96">Reusable Sheets for Half Sheet Pans,</text>
+    <text x="262" y="116">BPA-Free, Oven Safe to 480°F</text>
+  </g>
+  <!-- rating -->
+  <g fill="#e8952e">
+    <polygon points="268,128 270.4,133.2 276,133.8 271.8,137.6 273,143 268,140.2 263,143 264.2,137.6 260,133.8 265.6,133.2"/>
+    <polygon points="284,128 286.4,133.2 292,133.8 287.8,137.6 289,143 284,140.2 279,143 280.2,137.6 276,133.8 281.6,133.2"/>
+    <polygon points="300,128 302.4,133.2 308,133.8 303.8,137.6 305,143 300,140.2 295,143 296.2,137.6 292,133.8 297.6,133.2"/>
+    <polygon points="316,128 318.4,133.2 324,133.8 319.8,137.6 321,143 316,140.2 311,143 312.2,137.6 308,133.8 313.6,133.2"/>
+  </g>
+  <polygon points="332,128 334.4,133.2 340,133.8 335.8,137.6 337,143 332,140.2 327,143 328.2,137.6 324,133.8 329.6,133.2" fill="none" stroke="#e8952e"/>
+  <text x="348" y="141" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" fill="#4a5568">4.6 · 1,284 ratings</text>
+  <text x="262" y="174" font-family="Space Grotesk, system-ui, sans-serif" font-size="22" font-weight="700" fill="#0f1b2d">$18.99</text>
+  <line x1="262" y1="190" x2="620" y2="190" stroke="#d8d2c4"/>
+  <text x="262" y="212" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing="1" fill="#4a5568">ABOUT THIS ITEM</text>
+  <!-- bullets -->
+  <g fill="#0f1b2d">
+    <rect x="262" y="226" width="5" height="5"/>
+    <rect x="262" y="250" width="5" height="5"/>
+    <rect x="262" y="274" width="5" height="5"/>
+    <rect x="262" y="298" width="5" height="5"/>
+  </g>
+  <g font-family="Plus Jakarta Sans, system-ui, sans-serif" font-size="12" fill="#17233a">
+    <text x="276" y="233"><tspan font-weight="700">NON-STICK:</tspan> cookies release clean, no parchment</text>
+    <text x="276" y="257"><tspan font-weight="700">FITS HALF SHEET PANS:</tspan> 40 × 30 cm, cut-free</text>
+    <text x="276" y="281"><tspan font-weight="700">FOOD-GRADE:</tspan> BPA-free silicone, oven safe</text>
+    <text x="276" y="305"><tspan font-weight="700">EASY CARE:</tspan> dishwasher safe, rolls to store</text>
+  </g>
+  <!-- A+ content band -->
+  <rect x="20" y="352" width="600" height="68" fill="#0f1b2d"/>
+  <text x="36" y="376" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="10" letter-spacing="1" fill="#b8c0cf">A+ CONTENT</text>
+  <rect x="36" y="386" width="120" height="22" fill="#1c2b42"/>
+  <rect x="166" y="386" width="120" height="22" fill="#1c2b42"/>
+  <rect x="296" y="386" width="120" height="22" fill="#1c2b42"/>
+  <!-- SAMPLE stamp -->
+  <g transform="rotate(-8 530 386)">
+    <rect x="454" y="364" width="152" height="44" fill="#f4f1ea" stroke="#c9771a" stroke-width="3"/>
+    <text x="530" y="395" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="700" letter-spacing="6" fill="#c9771a">SAMPLE</text>
+  </g>
+</svg>
