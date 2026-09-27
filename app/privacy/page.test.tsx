@@ -22,4 +22,8 @@ describe("Privacy page", () => {
   it("declares its own canonical URL", () => {
     expect(metadata.alternates?.canonical).toBe("/privacy");
   });
+
+  it("shares its Open Graph url with its own canonical, not the home page's", () => {
+    expect(metadata.openGraph?.url).toBe(metadata.alternates?.canonical);
+  });
 });

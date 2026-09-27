@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "How this site handles the information you send through its contact form, and who to ask about it.",
   alternates: { canonical: "/privacy" },
+  openGraph: { url: "/privacy" },
 };
 
 export default function PrivacyPage() {

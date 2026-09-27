@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+/**
+ * A 404 is served at every unknown path, so it claims no single canonical
+ * URL and no Open Graph url: neither would be true, and search engines
+ * should not index this page at all.
+ */
+export const metadata: Metadata = {
+  title: "Page not found — Nilda Toraneo",
+  robots: { index: false, follow: false },
+  alternates: { canonical: undefined },
+  openGraph: { url: undefined },
+};
 
 /**
  * Next's special 404 file: same ink/paper manifest language as the rest of
