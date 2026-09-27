@@ -60,3 +60,13 @@ copy and test coverage on content the team authors, not a visitor supplies.
   calls, `tabIndex="-1"`) rather than a real tab sequence. Correctness minor (missing test).
   Accepted: the handoff's own keyboard-nav check happens in the browser-checker step, which
   exercises real Tab/Enter behavior more faithfully than a simulated jsdom walk would.
+
+## Browser check / Lighthouse, 2026-09-28
+
+- **`--verified` green (`#1f7a4d`) on `--paper` has only a 4.71:1 contrast margin at rest**,
+  just above the 4.5:1 AA floor for the small mono text it's used on (certification "Issued"
+  stamps). This is why `components/Section.tsx`'s scroll-reveal armed state needed raising to
+  0.98 opacity instead of a lower value like other sections could use. Accepted for now: the
+  build passes Lighthouse accessibility at 100 with no contrast failures. Revisit if `--verified`
+  ever needs to sit under any future dim, overlay or tint — darkening the token slightly would
+  give real headroom, but that's a palette change outside this handoff's scope.
